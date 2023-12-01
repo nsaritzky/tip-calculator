@@ -38,7 +38,13 @@ function App() {
   const formattedTip = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-  }).format(tip ? ((bill || 0) * tip) / 100 / (people || 1) : 0)
+  }).format(
+    tip
+      ? ((bill || 0) * tip) / 100 / (people || 1)
+      : customTip
+        ? ((bill || 0) * customTip) / 100 / (people || 1)
+        : 0,
+  )
 
   const formattedTotal = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -46,7 +52,10 @@ function App() {
   }).format(
     tip
       ? (bill || 0) / (people || 1) + ((bill || 0) * tip) / 100 / (people || 1)
-      : 0,
+      : customTip
+        ? (bill || 0) / (people || 1) +
+          ((bill || 0) * customTip) / 100 / (people || 1)
+        : 0,
   )
 
   useEffect(() => {
