@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import React, { useRef } from "react"
 
+import personIcon from "/images/icon-person.svg"
+import dollarIcon from "/images/icon-dollar.svg"
+
 interface TipPercentageButtonProps {
   percentage: number
   tip: number | undefined
@@ -74,7 +77,7 @@ function App() {
               />
               <img
                 className="absolute left-3 top-1/2 -translate-y-1/2 transform"
-                src="./images/icon-dollar.svg"
+                src={dollarIcon}
                 alt="dollar"
               />
             </div>
@@ -157,7 +160,7 @@ function App() {
               />
               <img
                 className="absolute left-3 top-1/2 -translate-y-1/2 transform"
-                src="./images/icon-person.svg"
+                src={personIcon}
                 alt="dollar"
               />
             </div>
